@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nodo Ambiental 1 — Finca El Oasis | UNAD</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Chart.js desde CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script type="module" src="app.js"></script>
+</head>
+<body>
+    <header>
+        <h1>🌿 Nodo Ambiental 1 — Finca El Oasis</h1>
+        <p class="subtitulo">
+            Cultivo de plantas medicinales tradicionales · Mondomo, Cauca ·
+            Caserío El Turco · Proyecto UNAD
+        </p>
+    </header>
+
+    <section>
+        <h2>📊 Última lectura</h2>
+        <div class="dashboard">
+            <div class="card"><h3>Temperatura</h3><p id="temp-value">--</p></div>
+            <div class="card"><h3>Humedad</h3><p id="hum-value">--</p></div>
+            <div class="card"><h3>Presión</h3><p id="press-value">--</p></div>
+            <div class="card"><h3>UV</h3><p id="uv-value">--</p></div>
+            <div class="card"><h3>RSSI</h3><p id="rssi-value">--</p></div>
+            <div class="card"><h3>SNR</h3><p id="snr-value">--</p></div>
+            <div class="card"><h3>Paquetes</h3><p id="count-value">--</p></div>
+            <div class="card"><h3>Timestamp</h3><p id="ts-value">--</p></div>
+        </div>
+    </section>
+
+    <section>
+        <h2>📈 Evolución temporal</h2>
+        <div class="chart-container">
+            <canvas id="chart-temp-hum"></canvas>
+        </div>
+    </section>
+
+    <section>
+        <h2>ℹ️ Información del nodo</h2>
+        <div class="meta-card">
+            <p><strong>Tipo:</strong> <span id="meta-tipo">--</span></p>
+            <p><strong>Ubicación:</strong> <span id="meta-ubicacion">--</span></p>
+            <p><strong>Estado:</strong> <span id="meta-estado">--</span></p>
+            <p><strong>Batería:</strong> <span id="meta-bateria">--</span></p>
+            <p><strong>Firmware:</strong> <span id="meta-firmware">--</span></p>
+            <p><strong>RSSI promedio:</strong> <span id="meta-rssi">--</span></p>
+            <p><strong>SNR promedio:</strong> <span id="meta-snr">--</span></p>
+            <p><strong>Última comunicación:</strong> <span id="meta-ultima">--</span></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Proyecto académico UNAD · Finca El Oasis · Mondomo, Cauca</p>
+    </footer>
+</body>
+</html>
