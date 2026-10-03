@@ -1,3 +1,8 @@
+/* =========================================================
+   RESET Y BASE
+   ========================================================= */
+* { box-sizing: border-box; }
+
 body {
     font-family: system-ui, -apple-system, sans-serif;
     background-color: #f4f7f6;
@@ -7,6 +12,9 @@ body {
     margin: 0 auto;
 }
 
+/* =========================================================
+   HEADER
+   ========================================================= */
 header h1 {
     border-bottom: 3px solid #2e7d32;
     padding-bottom: .5rem;
@@ -19,12 +27,66 @@ header h1 {
     font-size: .9rem;
     line-height: 1.4;
 }
+.creditos {
+    margin-top: .6rem;
+    font-size: .85rem;
+    color: #2e7d32;
+    background: #e8f5e9;
+    display: inline-block;
+    padding: .4rem .9rem;
+    border-radius: 20px;
+    border-left: 4px solid #2e7d32;
+}
+.creditos a {
+    color: #1b5e20;
+    text-decoration: none;
+    font-weight: 600;
+}
+.creditos a:hover { text-decoration: underline; }
+
 h2 {
     color: #2e7d32;
     margin-top: 2rem;
 }
 
-/* Tarjetas de datos */
+/* =========================================================
+   SELECTOR DE NODO
+   ========================================================= */
+.selector-section { margin-top: 1rem; }
+.selector-nodos {
+    display: flex;
+    gap: .8rem;
+    flex-wrap: wrap;
+    margin-top: .5rem;
+}
+.btn-nodo {
+    background: white;
+    color: #2e7d32;
+    border: 2px solid #2e7d32;
+    padding: .7rem 1.4rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s;
+}
+.btn-nodo:hover {
+    background: #e8f5e9;
+}
+.btn-nodo.active {
+    background: #2e7d32;
+    color: white;
+}
+
+/* =========================================================
+   PANELES DE NODO
+   ========================================================= */
+.panel-nodo { display: none; }
+.panel-nodo.active { display: block; }
+
+/* =========================================================
+   TARJETAS DE DATOS
+   ========================================================= */
 .dashboard {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -36,7 +98,9 @@ h2 {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.08);
     text-align: center;
+    transition: transform .2s;
 }
+.card:hover { transform: translateY(-3px); }
 .card h3 {
     margin: 0 0 .5rem;
     color: #666;
@@ -44,13 +108,15 @@ h2 {
     text-transform: uppercase;
 }
 .card p {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: bold;
     margin: 0;
     color: #007bff;
 }
 
-/* Contenedor de la gráfica */
+/* =========================================================
+   GRÁFICA
+   ========================================================= */
 .chart-container {
     background: white;
     padding: 1rem;
@@ -60,7 +126,9 @@ h2 {
     position: relative;
 }
 
-/* Botones de descarga */
+/* =========================================================
+   BOTONES DE DESCARGA
+   ========================================================= */
 .descarga-container {
     background: white;
     padding: 1.2rem 1.5rem;
@@ -78,11 +146,10 @@ h2 {
     font-weight: 600;
     cursor: pointer;
     margin-right: .8rem;
+    margin-bottom: .5rem;
     transition: background .2s;
 }
-.btn-descarga:hover {
-    background: #0056b3;
-}
+.btn-descarga:hover { background: #0056b3; }
 .descarga-info {
     display: inline-block;
     color: #666;
@@ -90,7 +157,9 @@ h2 {
     margin: 0;
 }
 
-/* Tarjeta de metadata */
+/* =========================================================
+   METADATA
+   ========================================================= */
 .meta-card {
     background: white;
     padding: 1.2rem 1.5rem;
@@ -108,6 +177,9 @@ h2 {
     min-width: 160px;
 }
 
+/* =========================================================
+   FOOTER
+   ========================================================= */
 footer {
     margin-top: 3rem;
     text-align: center;
@@ -115,4 +187,24 @@ footer {
     font-size: .8rem;
     border-top: 1px solid #ddd;
     padding-top: 1rem;
+}
+.creditos-footer {
+    margin-top: .3rem;
+    color: #2e7d32;
+}
+.creditos-footer a {
+    color: #1b5e20;
+    text-decoration: none;
+    font-weight: 600;
+}
+.creditos-footer a:hover { text-decoration: underline; }
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 600px) {
+    body { padding: 1rem; }
+    .card p { font-size: 1.2rem; }
+    .btn-nodo { flex: 1; text-align: center; }
+    .btn-descarga { width: 100%; margin-right: 0; }
 }
